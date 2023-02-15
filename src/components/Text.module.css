@@ -1,0 +1,13 @@
+.container {
+    width: clamp(18.75rem, 15.625rem + 15.625vw, 28.125rem);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+h1 {
+    padding: 2rem 0;
+}
+
+.body {
+    color: #D0D6F9;
+}

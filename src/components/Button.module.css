@@ -1,0 +1,21 @@
+.button {
+    width: clamp(9.375rem, 6.792rem + 12.917vw, 17.125rem);
+    height: clamp(9.375rem, 6.792rem + 12.917vw, 17.125rem);
+    background-color: #fff;
+    border-radius: 9999px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+}
+
+.button:hover, .button:focus, .button:active {
+    cursor: pointer;
+    outline: 5rem solid rgba(255, 255, 255 ,.2);
+}
+
+h4 {
+    text-align: center;
+    color: #000;
+}
