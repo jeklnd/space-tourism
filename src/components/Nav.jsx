@@ -1,28 +1,34 @@
-import logo from "../assets/images/shared/logo.svg";
-import hamburger from "../assets/images/shared/icon-hamburger.svg"
+import React from "react";
+import logo from "assets/images/shared/logo.svg";
+import hamburger from "assets/images/shared/icon-hamburger.svg";
 import styles from "./Nav.module.css";
-
-function Page(props) {
-    return (
-      <a className={props.className} href={props.href}><span>{props.number}</span> {props.page}</a>
-    );
-  }
-
+import { NavLink } from "react-router-dom";
 
 function Nav() {
-    return (
-        <nav>
-            <img src={logo} alt="logo" className={styles.logo}></img>
-            <div id={styles.line}></div>
-            <ul>
-                <li><Page className={styles.active} href="#home" number="00" page="HOME"/></li>
-                <li><Page href="#dest" number="01" page="DESTINATION"/></li>
-                <li><Page href="#crew" number="02" page="CREW"/></li>
-                <li><Page href="#tech" number="03" page="TECHNOLOGY"/></li>
-            </ul>
-            <img className={styles.hamburger} src={hamburger} alt="hamburger"></img>
-        </nav>
-    )
+  const pages = [
+    { id: 0, name: "HOME", number: "01", href: "/home" },
+    { id: 1, name: "DESTINATION", number: "02", href: "/destination" },
+    { id: 2, name: "CREW", number: "03", href: "/crew" },
+    { id: 3, name: "TECHNOLOGY", number: "04", href: "/technology" },
+  ];
+
+  const listItems = pages.map((page) => (
+    <li key={page.id}>
+      <NavLink to={page.href}>
+        <span>{page.number}</span>
+        {page.name}
+      </NavLink>
+    </li>
+  ));
+
+  return (
+    <nav>
+      <img id={styles.logo} src={logo} alt="logo" className={styles.logo}></img>
+      <div id={styles.line}></div>
+      <ul>{listItems}</ul>
+      <img className={styles.hamburger} src={hamburger} alt="hamburger"></img>
+    </nav>
+  );
 }
 
 export default Nav;

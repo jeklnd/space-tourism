@@ -1,24 +1,14 @@
-import Nav from "./Nav";
-import Text from "./Text";
-import Button from "./Button";
-import styles from "./App.module.css";
+import React from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import Home from "routes/Home"
+// import Nav from "components/Nav";
 
-function App() {
+export default function App() {
+  const location = useLocation();
+  // console.log(location);
   return (
-    <div className="App">
-      <section id={styles.home}>
-        <header>
-          <Nav />
-        </header>
-        <main>
-          <article id={styles.landing}>
-            <Text />
-            <Button />
-          </article>
-        </main>
-      </section>
-    </div>
+    <>
+      {location.pathname === "/" ? <Home /> : <Outlet />}
+    </>
   );
 }
-
-export default App;
