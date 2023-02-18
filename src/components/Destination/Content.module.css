@@ -1,0 +1,54 @@
+.body {
+  color: #d0d6f9;
+  width: clamp(20.438rem, 18rem + 12.188vw, 27.75rem);
+}
+
+.heading {
+  margin-top: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  margin-bottom: clamp(0.063rem, -0.083rem + 0.729vw, 0.5rem);
+  font-size: 56px;
+}
+
+.subheading_1 {
+  font-family: var(--lato);
+  font-size: 1.75rem;
+  letter-spacing: 0.1469rem;
+  color: #fff;
+}
+
+.subheading_2 {
+  font-family: var(--barlow-condensed);
+  font-size: 0.875rem;
+  letter-spacing: 0.1688rem;
+  color: #d0d6f9;
+}
+
+.travel_details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid #383b4b;
+  margin: 2rem 0;
+  padding-top: clamp(1.75rem, 1.667rem + 0.417vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .travel_details {
+    flex-direction: column;
+    gap: none;
+    justify-content: space-around;
+  }
+
+  #destination h5 {
+    text-align: center;
+  }
+
+  .grid {
+    margin: 0 auto;
+  }
+}
+
+.planet {
+  width: clamp(10.625rem, 4.896rem + 28.646vw, 27.813rem);
+}
