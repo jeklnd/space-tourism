@@ -5,8 +5,9 @@ import App from "components/App";
 import Home from "routes/Home";
 import Destination from "routes/Destination";
 import Crew from "routes/Crew";
-import Technology from "routes/Technology"
+import Technology from "routes/Technology";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Content from "components/Destination/Content";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
       {
         path: "/destination",
         element: <Destination />,
+        children: [
+          { path: "moon", element: <Content/>},
+          { path: "mars", element: <Content/> },
+          { path: "europa", element: <Content/> },
+          { path: "titan", element: <Content/> },
+        ],
       },
       {
         path: "/crew",
@@ -37,6 +44,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
