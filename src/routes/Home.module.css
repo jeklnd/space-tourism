@@ -5,7 +5,7 @@
   min-height: 100vh;
 }
 
-article {
+#home article {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -26,11 +26,10 @@ article {
     min-height: 100vh;
   }
 
-  article {
+  #home article {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* gap: 6rem; */
     height: 100%;
   }
 }
