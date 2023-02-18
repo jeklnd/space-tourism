@@ -32,11 +32,16 @@ nav {
     height: 4rem;
   }
   
-  nav li {
+  .li {
     display: inline-flex;
     align-items: flex-end;
     padding: 0 2rem;
     height: 100%;
+  }
+
+  .active {
+    color: #fff;
+    border-bottom: 3px solid #fff;
   }
   
   nav a {
@@ -71,6 +76,10 @@ nav {
     padding: 0 0 0 2rem;
     cursor: pointer;
   }
+
+  .logo_link:hover, .logo_link:focus, .logo_link:active {
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+  }
   
   @media (max-width: 1299px) {
     nav a span {
@@ -91,4 +100,8 @@ nav {
       display: block;
       padding: 0 2rem 0 0;
     }
+  }
+
+  nav img {
+    z-index: 99;
   }
