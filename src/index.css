@@ -1,9 +1,9 @@
 :root {
   --dark: "0B0D17";
   --light: "#D0D6F9";
-  --font-one: "Barlow", sans-serif;
-  --font-two: 'Lato', sans-serif;
-  --font-three: "Barlow Condensed", sans-serif;
+  --barlow: "Barlow", sans-serif;
+  --lato: "Lato", sans-serif;
+  --barlow-condensed: "Barlow Condensed", sans-serif;
 }
 
 *,
@@ -18,13 +18,18 @@
   padding: 0;
 }
 
+#root {
+  height: 100%;
+}
+
 html,
-body {
+body,
+#root {
   height: 100%;
   font-size: clamp(0.938rem, 0.875rem + 0.313vw, 1.125rem);
   line-height: 2rem;
-  font-family: var(--font-one);
-  overflow: hidden;
+  font-family: var(--barlow);
+  overflow-x: hidden;
 }
 
 img,
@@ -52,13 +57,14 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-two);
+  font-family: var(--lato);
   line-height: 1.2;
   color: #fff;
+  font-weight: inherit;
 }
 
 h1 {
-  font-size: clamp(5rem, 3.542rem + 7.292vw, 9.375rem)
+  font-size: clamp(5rem, 3.542rem + 7.292vw, 9.375rem);
 }
 
 h2 {
@@ -74,22 +80,10 @@ h4 {
 }
 
 h5 {
-  font-family: var(--font-three);
+  font-family: var(--barlow-condensed);
   font-size: clamp(1rem, 0.75rem + 1.25vw, 1.75rem);
   line-height: 1.2;
   letter-spacing: 0.2969rem;
-  color: #D0D6F9;
+  color: #d0d6f9;
+  font-weight: inherit;
 }
-
-.subheading-1 {
-  font-family: var(--font-two);
-  font-size: 0.875rem;
-  letter-spacing: 0.1469rem;
-}
-
-.subheading-2 {
-  font-family: var(--font-three);
-  font-size: 1rem;
-  letter-spacing: 0.1688rem;
-}
-
