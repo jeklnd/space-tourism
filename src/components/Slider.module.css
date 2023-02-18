@@ -1,0 +1,9 @@
+.dot {
+  margin: 0 clamp(0.5rem, 0.417rem + 0.417vw, 0.75rem); 
+}
+
+.dot svg {
+    width: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
+    height: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
+    /* opacity:  .17; */
+}
