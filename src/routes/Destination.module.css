@@ -4,34 +4,98 @@
   min-height: 100vh;
 }
 
-article {
+.grid {
+  display: grid;
+  gap: clamp(2rem, 1.417rem + 2.917vw, 3.75rem);
+  max-width: 80rem;
+  width: 90%;
+  grid-template-columns: 1fr;
+  margin: auto;
+  padding: clamp(2.5rem, 1.75rem + 3.75vw, 4.75rem) 0;
+}
+
+#destination article {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  gap: clamp(1.625rem, 1.063rem + 2.813vw, 3.313rem);
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 1000px) {
-  article {
+  #destination article {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* gap: 6rem; */
-    height: 100%;
+    gap: 6rem;
+    /* height: 100%; */
+    text-align: center;
   }
 }
 
-h5 {
+#destination h5 {
+  color: #fff;
+  text-align: left;
+}
+
+#destination h5 span {
+  opacity: 0.25;
+  padding-right: 1.125rem;
+}
+
+#destination h2 {
+  margin-top: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  margin-bottom: clamp(0.063rem, -0.083rem + 0.729vw, 0.5rem);
+  font-size: 56px;
+}
+
+.travel_details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid #383b4b;
+  margin: 2rem 0;
+  padding-top: clamp(1.75rem, 1.667rem + 0.417vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .travel_details {
+    flex-direction: column;
+    gap: none;
+    justify-content: space-around;
+  }
+
+  #destination h5 {
+    text-align: center;
+  }
+
+  .grid {
+    margin: 0 auto;
+  }
+}
+
+.planet {
+  width: clamp(10.625rem, 4.896rem + 28.646vw, 27.813rem);
+}
+
+.body {
+  color: #d0d6f9;
+  width: clamp(20.438rem, 18rem + 12.188vw, 27.75rem);
+}
+
+.subheading_1 {
+  font-family: var(--lato);
+  font-size: 1.75rem;
+  letter-spacing: 0.1469rem;
   color: #fff;
 }
 
-h5 span {
-  opacity: 0.25;
-  padding-right: 1rem;
+.subheading_2 {
+  font-family: var(--barlow-condensed);
+  font-size: 0.875rem;
+  letter-spacing: 0.1688rem;
+  color: #d0d6f9;
 }
