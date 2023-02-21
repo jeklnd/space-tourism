@@ -5,20 +5,30 @@
   min-height: 100vh;
 }
 
-.flex {
+@media (max-width: 768px) {
+  .center {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%; */
+  }
+}
+
+.display {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 95%;
   margin: auto;
+  padding: 0 0 2rem;
 }
 
 .section_header {
   font-family: var(--barlow-condensed);
   font-size: clamp(1rem, 0.75rem + 1.25vw, 1.75rem);
   letter-spacing: 0.1688rem;
-  padding-bottom: 2rem;
 }
 
 .section_header span {
@@ -26,16 +36,21 @@
   opacity: 0.25;
 }
 
-.img {
-  width: clamp(11.063rem, 2.917rem + 40.729vw, 35.5rem);
+.img_container {
+  width: 95%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #383b4b;
 }
-
-.slider {
-  padding: 2rem 0;
+.img {
+  max-width: clamp(9.375rem, 0.667rem + 43.542vw, 35.5rem);
 }
 
 .content {
   text-align: center;
+  max-width: clamp(20.438rem, 17.563rem + 14.374vw, 30.5rem);
 }
 .content_subheader {
   font-size: clamp(1rem, 0.667rem + 1.667vw, 2rem);
@@ -50,4 +65,80 @@
 }
 .content_body {
   color: #d0d6f9;
+}
+
+@media (min-width: 768px) {
+  .display {
+    height: 100%;
+    margin: 0 auto;
+  }
+  .section_header {
+    align-self: flex-start;
+  }
+  .section_header span {
+    padding-left: 1rem;
+    font-weight: bold;
+  }
+  .img_container {
+    order: 4;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+  }
+  .display > *:nth-child(3) {
+    order: 4;
+    padding-top: 40px;
+  }
+
+  .content_subheader {
+    padding-top: 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .display {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, minmax(fit-content(0), 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .img_container {
+    position: static;
+    grid-area: 1 / 2 / 4 / 3;
+  }
+
+  .img {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .content_subheader {
+    padding-top: 154px;
+  }
+
+  .content {
+    text-align: left;
+    max-width: 800px;
+  }
+
+  .content_body {
+    max-width: 500px;
+    min-height: 180px;
+  }
+
+  .section_header span {
+    padding-left: 0;
+  }
+
+  .display > *:nth-child(3) {
+    order: 4;
+    padding-top: 120px;
+    justify-content: flex-start;
+  }
+
+  .content_header{
+    padding: 2rem 0 3rem;
+  }
 }
