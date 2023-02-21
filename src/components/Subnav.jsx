@@ -2,13 +2,13 @@ import React from "react";
 import styles from "components/Subnav.module.css";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { objects } from "data.js";
+import { planets } from "data.js";
 import { NavLink } from "react-router-dom";
 
 export default function Subnav() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const listItems = objects.map((object, index) => {
+  const listItems = planets.map((object, index) => {
     return (
       <Li
         key={object.id}
