@@ -1,9 +1,32 @@
-.dot {
-  margin: 0 clamp(0.5rem, 0.417rem + 0.417vw, 0.75rem); 
+.ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  list-style-type: none;
+  margin: 0 clamp(0.5rem, 0.417rem + 0.417vw, 0.75rem);
+  width: 100%;
 }
 
-.dot svg {
-    width: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
-    height: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
-    /* opacity:  .17; */
+.li {
+  width: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
+  height: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
+}
+
+.circle {
+  opacity: 0.17;
+}
+
+.circle:hover, .circle:focus, .circle:active {
+  opacity: 0.5;
+}
+
+.active {
+  opacity: 1;
+}
+
+.nav_link {
+  width: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
+  height: clamp(0.625rem, 0.521rem + 0.521vw, 0.938rem);
 }
