@@ -46,6 +46,7 @@
 #destination h5 span {
   opacity: 0.25;
   padding-right: 1.125rem;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
