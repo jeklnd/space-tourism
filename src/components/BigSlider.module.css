@@ -1,0 +1,48 @@
+.ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0 clamp(0.5rem, 0.417rem + 0.417vw, 0.75rem);
+  width: 100%;
+}
+
+.li {
+  width: clamp(2.5rem, 1.464rem + 4.42vw, 5rem);
+  height: clamp(2.5rem, 1.464rem + 4.42vw, 5rem);
+}
+
+.svg {
+  position: relative;
+}
+
+.circle {
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.circle:hover,
+.circle:focus,
+.circle:active {
+  opacity: 1;
+}
+
+.active {
+  fill: #fff;
+  opacity: 1;
+}
+
+.text {
+    pointer-events: none;
+}
+
+.activeText {
+  fill: #000;
+}
+
+.nav_link {
+  width: clamp(2.5rem, 1.464rem + 4.42vw, 5rem);
+  height: clamp(2.5rem, 1.464rem + 4.42vw, 5rem);
+}
