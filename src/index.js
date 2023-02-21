@@ -32,10 +32,21 @@ const router = createBrowserRouter([
       {
         path: "/crew",
         element: <Crew />,
+        children: [
+          { path: "hurley", element: <Crew/>},
+          { path: "shuttleworth", element: <Crew/> },
+          { path: "glover", element: <Crew/> },
+          { path: "ansari", element: <Crew/> },
+        ],
       },
       {
         path: "/technology",
         element: <Technology />,
+        children: [
+          { path: "launch-vehicle", element: <Technology/>},
+          { path: "spaceport", element: <Technology/> },
+          { path: "space-capsule", element: <Technology/> },
+        ],
       },
     ],
   },
