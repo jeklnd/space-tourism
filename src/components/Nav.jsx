@@ -4,23 +4,22 @@ import hamburger from "assets/images/shared/icon-hamburger.svg";
 import styles from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
 import { Drawer, toggleDrawer } from "components/Drawer";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
-
 
 export default function Nav() {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
-  useEffect(() => {
-    if (location.pathname === "/home") {
-      setActiveIndex(0);
-    } else if (location.pathname.includes("/destination")) {
+  useMemo(() => {
+    if (location.pathname.includes("/destination")) {
       setActiveIndex(1);
-    } else if (location.pathname === "/crew") {
+    } else if (location.pathname.includes("/crew")) {
       setActiveIndex(2);
-    } else {
+    } else if (location.pathname.includes("/technology")) {
       setActiveIndex(3);
+    } else {
+      setActiveIndex(0);
     }
   }, [location.pathname]);
 
