@@ -11,7 +11,7 @@ export default function Destination() {
       <Nav />
       <div className={styles.grid}>
         <h5>
-          <span>01</span> Pick Your Destination
+          <span>01</span> {"Pick Your Destination".toUpperCase()}
         </h5>
         <article>
           {location.pathname === "/destination" ? <Content /> : <Outlet />}
