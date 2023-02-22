@@ -17,3 +17,11 @@ declare module "*.webp" {
   const content: any;
   export default content;
 }
+
+declare module "data.js" {
+  const planets: Array<any>;
+  const people: Array<any>;
+  const technology: Array<any>;
+  const hurley, shuttleworth, glover, ansari: object;
+  const vehicle, spaceport, capsule: object;
+}
