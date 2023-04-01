@@ -1,5 +1,5 @@
 #destination {
-  background: url("../assets/images/destination/enlarged.webp") no-repeat;
+  background: url("assets/images/destination/enlarged.webp") no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
