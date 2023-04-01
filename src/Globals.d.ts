@@ -19,9 +19,11 @@ declare module "*.webp" {
 }
 
 declare module "data.js" {
+  const pages: Array<any>;
   const planets: Array<any>;
   const people: Array<any>;
   const technology: Array<any>;
   const hurley, shuttleworth, glover, ansari: object;
   const vehicle, spaceport, capsule: object;
+  const moon, mars, europa, titan: object;
 }
