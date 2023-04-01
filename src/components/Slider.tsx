@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "components/Slider.module.css";
 import { useState } from "react";
-// import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { people } from "data.js";
 import { useLocation } from "react-router-dom";
@@ -63,9 +62,3 @@ function Li({ isActive, onClick, name }: Props) {
     </li>
   );
 }
-
-// Li.propTypes = {
-//   isActive: PropTypes.bool,
-//   onClick: PropTypes.func,
-//   name: PropTypes.string,
-// };
