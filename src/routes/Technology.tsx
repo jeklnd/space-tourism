@@ -40,8 +40,8 @@ export default function Technology() {
             {"Space Launch 101".toUpperCase()}
           </h2>
           <div className={styles.img_container}>
-            <img src={img} className={styles.img}></img>
-            <img src={portrait_img} className={styles.portrait_img}></img>
+            <img src={img} className={styles.img} alt=""></img>
+            <img src={portrait_img} className={styles.portrait_img} alt=""></img>
           </div>
 
           <BigSlider />
