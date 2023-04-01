@@ -1,5 +1,4 @@
 import styles from "./Crew.module.css";
-import React from "react";
 import Nav from "components/Nav";
 import Slider from "components/Slider";
 import { useLocation } from "react-router-dom";
@@ -37,7 +36,7 @@ export default function Crew() {
             {"meet your crew".toUpperCase()}
           </h2>
           <div className={styles.img_container}>
-            <img src={img} className={styles.img}></img>
+            <img src={img} className={styles.img} alt="crew member"></img>
           </div>
 
           <Slider />
