@@ -1,5 +1,3 @@
-// import styles from "../components/App.module.css";
-import React from "react";
 import styles from "./Destination.module.css";
 import Nav from "components/Nav";
 import Content from "components/Destination/Content";
