@@ -1,3 +1,10 @@
+export const pages = [
+  { id: 0, name: "HOME", number: "01", href: "/home" },
+  { id: 1, name: "DESTINATION", number: "02", href: "/destination/moon" },
+  { id: 2, name: "CREW", number: "03", href: "/crew" },
+  { id: 3, name: "TECHNOLOGY", number: "04", href: "/technology" },
+];
+
 export const planets = [
   {
     id: 0,
