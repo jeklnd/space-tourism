@@ -23,29 +23,29 @@ const router = createBrowserRouter([
         path: "/destination",
         element: <Destination />,
         children: [
-          { path: "moon", element: <Content/>},
-          { path: "mars", element: <Content/> },
-          { path: "europa", element: <Content/> },
-          { path: "titan", element: <Content/> },
+          { path: "moon", element: <Content /> },
+          { path: "mars", element: <Content /> },
+          { path: "europa", element: <Content /> },
+          { path: "titan", element: <Content /> },
         ],
       },
       {
         path: "/crew",
         element: <Crew />,
         children: [
-          { path: "hurley", element: <Crew/>},
-          { path: "shuttleworth", element: <Crew/> },
-          { path: "glover", element: <Crew/> },
-          { path: "ansari", element: <Crew/> },
+          { path: "hurley", element: <Crew /> },
+          { path: "shuttleworth", element: <Crew /> },
+          { path: "glover", element: <Crew /> },
+          { path: "ansari", element: <Crew /> },
         ],
       },
       {
         path: "/technology",
         element: <Technology />,
         children: [
-          { path: "launch-vehicle", element: <Technology/>},
-          { path: "spaceport", element: <Technology/> },
-          { path: "space-capsule", element: <Technology/> },
+          { path: "launch-vehicle", element: <Technology /> },
+          { path: "spaceport", element: <Technology /> },
+          { path: "space-capsule", element: <Technology /> },
         ],
       },
     ],
@@ -55,6 +55,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   </React.StrictMode>
 );
