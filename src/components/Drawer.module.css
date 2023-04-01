@@ -1,4 +1,45 @@
 .drawer {
-    height:100vh;
-    overflow: hidden;
+  height: 100vh;
+  width: 60vw;
+  backdrop-filter: blur(3rem) contrast(90%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* display: none; */
+}
+
+@media (min-width: 768px) {
+  .drawer {
+    display: none;
+  }
+}
+
+.ul {
+  margin-top: 118px;
+  padding: 1rem;
+}
+
+.li {
+  list-style-type: none;
+}
+
+.li a {
+  font-family: var(--barlow-condensed);
+  font-size: 1rem;
+  letter-spacing: 0.1688rem;
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  display: flex;
+  gap: 1rem;
+}
+
+.li a span {
+  font-weight: bold;
 }
