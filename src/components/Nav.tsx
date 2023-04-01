@@ -1,12 +1,10 @@
-import React from "react";
-import logo  from "assets/images/shared/logo.svg";
-import hamburger from "assets/images/shared/icon-hamburger.svg";
+import React, { useState, useMemo } from "react";
+import logo from "assets/images/shared/logo.svg";
+import Hamburger from "components/Hamburger";
 import styles from "./Nav.module.css";
-import { NavLink } from "react-router-dom";
-// import { Drawer, toggleDrawer } from "components/Drawer";
-import { useState, useMemo } from "react";
-// import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { pages } from "data.js";
+import Li from "components/Li";
 
 export default function Nav() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,27 +21,20 @@ export default function Nav() {
     }
   }, [location.pathname]);
 
-  const pages = [
-    { id: 0, name: "HOME", number: "01", href: "/home" },
-    { id: 1, name: "DESTINATION", number: "02", href: "/destination/moon" },
-    { id: 2, name: "CREW", number: "03", href: "/crew" },
-    { id: 3, name: "TECHNOLOGY", number: "04", href: "/technology" },
-  ];
-
   const listItems = pages.map((page, index) => {
+    console.log(page.name);
     return (
-      <Li
-        key={page.id}
-        isActive={activeIndex === index}
-        // onClick={() => setActiveIndex(index)}
-        className={styles.li}
-        href={page.href}
-        number={page.number}
-        name={page.name}
-      ></Li>
+      <Li key={page.id} className={styles.li}>
+        <NavLink
+          to={page.href}
+          className={activeIndex === index ? `${styles.active}` : undefined}
+        >
+          <span>{page.number}</span>
+          {page.name}
+        </NavLink>
+      </Li>
     );
   });
-
   return (
     <nav>
       <NavLink to={"/home"} className={styles.logo_link}>
@@ -56,40 +47,7 @@ export default function Nav() {
       </NavLink>
       <div id={styles.line}></div>
       <ul>{listItems}</ul>
-      <img
-        className={styles.hamburger}
-        src={hamburger}
-        alt="hamburger"
-        // onClick={toggleDrawer}
-      ></img>
-      {/* <Drawer isOpen={false} /> */}
+      <Hamburger onClick={() => {console.log("click")}} />
     </nav>
   );
 }
-
-interface Props {
-  isActive: boolean,
-  href: string,
-  number: string,
-  name: string,
-  className?: string,
-}
-
-function Li({ isActive, href, number, name }: Props) {
-  return (
-    <li className={styles.li}>
-      <NavLink to={href} className={isActive ? `${styles.active}` : undefined}>
-        <span>{number}</span>
-        {name}
-      </NavLink>
-    </li>
-  );
-}
-
-// Li.propTypes = {
-//   isActive: PropTypes.bool,
-//   onClick: PropTypes.func,
-//   name: PropTypes.string,
-//   href: PropTypes.string,
-//   number: PropTypes.string,
-// };
