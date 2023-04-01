@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "components/Subnav.module.css";
 import { useState } from "react";
-// import PropTypes from "prop-types";
 import { planets } from "data.js";
 import { NavLink } from "react-router-dom";
 
@@ -38,9 +37,3 @@ function Li({ isActive, onClick, name }: Props) {
     </li>
   );
 }
-
-// Li.propTypes = {
-//   isActive: PropTypes.bool,
-//   onClick: PropTypes.func,
-//   name: PropTypes.string,
-// };
