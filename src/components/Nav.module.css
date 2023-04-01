@@ -67,9 +67,7 @@ nav a span {
   font-weight: bold;
 }
 
-.hamburger {
-  display: none;
-}
+
 
 .logo {
   padding: 0 0 0 2rem;
@@ -93,11 +91,6 @@ nav a span {
 
   nav ul {
     display: none;
-  }
-
-  .hamburger {
-    display: block;
-    padding: 0 2rem 0 0;
   }
 }
 
