@@ -10,7 +10,7 @@ export default function Home() {
       <Helmet>
         <link
           rel="preload"
-          href="assets/images/home/enlarged-home.webp"
+          href="src/assets/images/technology/background-technology-desktop.webp"
           as="image"
         />
       </Helmet>

@@ -11,7 +11,7 @@ export default function Destination() {
       <Helmet>
         <link
           rel="preload"
-          href="assets/images/destination/enlarged.webp"
+          href="src/assets/images/technology/background-technology-desktop.webp"
           as="image"
         />
       </Helmet>

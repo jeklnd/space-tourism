@@ -32,7 +32,7 @@ export default function Crew() {
       <Helmet>
         <link
           rel="preload"
-          href="assets/images/crew/background-crew-desktop_upscaled.webp"
+          href="src/assets/images/technology/background-technology-desktop.webp"
           as="image"
         />
       </Helmet>
