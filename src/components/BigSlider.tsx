@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "components/BigSlider.module.css";
 import { useState } from "react";
-// import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { technology } from "data.js";
 import { useLocation } from "react-router-dom";
@@ -78,10 +77,3 @@ function Li({ isActive, onClick, name, number }: Props) {
     </li>
   );
 }
-
-// Li.propTypes = {
-//   isActive: PropTypes.bool,
-//   onClick: PropTypes.func,
-//   name: PropTypes.string,
-//   number: PropTypes.number,
-// };
