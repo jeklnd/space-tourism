@@ -10,6 +10,7 @@ import capsule_img from "assets/images/technology/image-space-capsule-landscape.
 import launch_img_portrait from "assets/images/technology/image-launch-vehicle-portrait.jpg";
 import spaceport_img_portrait from "assets/images/technology/image-spaceport-portrait.jpg";
 import capsule_portrait from "assets/images/technology/image-space-capsule-portrait.jpg";
+import { Helmet } from "react-helmet";
 
 export default function Technology() {
   const location = useLocation();
@@ -31,27 +32,42 @@ export default function Technology() {
     portrait_img = launch_img_portrait;
   }
   return (
-    <main id={styles.technology}>
-      <Nav />
-      <div className={styles.center}>
-        <article className={styles.display}>
-          <h2 className={styles.section_header}>
-            <span>03</span>
-            {"Space Launch 101".toUpperCase()}
-          </h2>
-          <div className={styles.img_container}>
-            <img src={img} className={styles.img} alt=""></img>
-            <img src={portrait_img} className={styles.portrait_img} alt=""></img>
-          </div>
+    <>
+      <Helmet>
+        <link
+          rel="preload"
+          href="assets/images/technology/background-technology-desktop.webp"
+          as="image"
+        />
+      </Helmet>
+      <main id={styles.technology}>
+        <Nav />
+        <div className={styles.center}>
+          <article className={styles.display}>
+            <h2 className={styles.section_header}>
+              <span>03</span>
+              {"Space Launch 101".toUpperCase()}
+            </h2>
+            <div className={styles.img_container}>
+              <img src={img} className={styles.img} alt=""></img>
+              <img
+                src={portrait_img}
+                className={styles.portrait_img}
+                alt=""
+              ></img>
+            </div>
 
-          <BigSlider />
-          <div className={styles.content}>
-            <h1 className={styles.content_subheader}>THE TERMINOLOGY...</h1>
-            <h1 className={styles.content_header}>{tech.name.toUpperCase()}</h1>
-            <p className={styles.content_body}>{tech.description}</p>
-          </div>
-        </article>
-      </div>
-    </main>
+            <BigSlider />
+            <div className={styles.content}>
+              <h1 className={styles.content_subheader}>THE TERMINOLOGY...</h1>
+              <h1 className={styles.content_header}>
+                {tech.name.toUpperCase()}
+              </h1>
+              <p className={styles.content_body}>{tech.description}</p>
+            </div>
+          </article>
+        </div>
+      </main>
+    </>
   );
 }
