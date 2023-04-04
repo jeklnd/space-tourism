@@ -4,12 +4,13 @@ import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { pages } from "data.js";
+import { motion, AnimatePresence } from "framer-motion";
 
-// interface Props {
-//     isOpen?: boolean;
-// }
+interface DrawerProps {
+  isOpen: boolean;
+}
 
-export default function Drawer() {
+export default function Drawer({ isOpen }: DrawerProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const location = useLocation();
@@ -39,9 +40,19 @@ export default function Drawer() {
   });
 
   return (
-    <div className={styles.drawer}>
-      <ul className={styles.ul}>{listItems}</ul>
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className={styles.drawer}
+          initial={{ x: 300 }}
+          animate={{ x: 0 }}
+          exit={{ x: 300  }}
+          transition={{ duration: 0.5 }}
+        >
+          <ul className={styles.ul}>{listItems}</ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
