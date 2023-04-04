@@ -36,6 +36,7 @@
 }
 .img {
   max-width: clamp(9.375rem, 0.667rem + 43.542vw, 35.5rem);
+  max-height: 70%;
 }
 
 .content {
