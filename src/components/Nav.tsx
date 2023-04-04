@@ -5,9 +5,14 @@ import styles from "./Nav.module.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { pages } from "data.js";
 import Li from "components/Li";
+import Drawer from "./Drawer";
 
 export default function Nav() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   const location = useLocation();
   useMemo(() => {
     if (location.pathname.includes("/destination")) {
@@ -22,7 +27,7 @@ export default function Nav() {
   }, [location.pathname]);
 
   const listItems = pages.map((page, index) => {
-    console.log(page.name);
+    // console.log(page.name);
     return (
       <Li key={page.id} className={styles.li}>
         <NavLink
@@ -36,18 +41,21 @@ export default function Nav() {
     );
   });
   return (
-    <nav>
-      <NavLink to={"/home"} className={styles.logo_link}>
-        <img
-          id={styles.logo}
-          src={logo}
-          alt="logo"
-          className={styles.logo}
-        ></img>
-      </NavLink>
-      <div id={styles.line}></div>
-      <ul>{listItems}</ul>
-      <Hamburger onClick={() => {console.log("click")}} />
-    </nav>
+    <>
+      <nav>
+        <NavLink to={"/home"} className={styles.logo_link}>
+          <img
+            id={styles.logo}
+            src={logo}
+            alt="logo"
+            className={styles.logo}
+          ></img>
+        </NavLink>
+        <div id={styles.line}></div>
+        <ul>{listItems}</ul>
+        <Hamburger onClick={handleClick} />
+      </nav>
+      <Drawer isOpen={isOpen}></Drawer>
+    </>
   );
 }
